@@ -1,0 +1,90 @@
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (362.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (95.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (23.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateListings (20100730120633)
+  [4;36;1mSQL (43.0ms)[0m   [0;1mCREATE TABLE `listings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100730120633')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (53.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mdescribe `listings`[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mSHOW KEYS FROM `listings`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2010-07-30 13:07:47) [GET]
+  [4;36;1mListing Load (1.0ms)[0m   [0;1mSELECT * FROM `listings` [0m
+Rendering template within layouts/listings
+Rendering listings/index
+Completed in 3222ms (View: 3211, DB: 3) | 200 OK [http://localhost/listings]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#new (for 127.0.0.1 at 2010-07-30 13:07:53) [GET]
+  [4;35;1mListing Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+Rendering template within layouts/listings
+Rendering listings/new
+Completed in 73ms (View: 32, DB: 25) | 200 OK [http://localhost/listings/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#create (for 127.0.0.1 at 2010-07-30 13:08:01) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"SLrbACHkZYzB0vsUZElaTU/22W0GAbyTazAztiESu6Y=", "listing"=>{"title"=>"dog", "description"=>"he is good"}}
+  [4;36;1mListing Columns (21.0ms)[0m   [0;1mSHOW FIELDS FROM `listings`[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mListing Create (43.0ms)[0m   [0;1mINSERT INTO `listings` (`updated_at`, `title`, `description`, `created_at`) VALUES('2010-07-30 12:08:01', 'dog', 'he is good', '2010-07-30 12:08:01')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/listings/1
+Completed in 98ms (DB: 77) | 302 Found [http://localhost/listings]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#show (for 127.0.0.1 at 2010-07-30 13:08:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mListing Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `listings`[0m
+  [4;35;1mListing Load (46.0ms)[0m   [0mSELECT * FROM `listings` WHERE (`listings`.`id` = 1) [0m
+Rendering template within layouts/listings
+Rendering listings/show
+Completed in 90ms (View: 16, DB: 63) | 200 OK [http://localhost/listings/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mListing Load (1.0ms)[0m   [0;1mSELECT * FROM `listings` [0m
+  [4;35;1mListing Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2010-07-30 13:08:24) [GET]
+  [4;36;1mListing Load (1.0ms)[0m   [0;1mSELECT * FROM `listings` [0m
+Rendering template within layouts/listings
+Rendering listings/index
+  [4;35;1mListing Columns (51.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+Completed in 72ms (View: 11, DB: 52) | 200 OK [http://localhost/listings]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (41.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mListing Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (42.0ms)[0m   [0;1mSELECT @@global.sql_mode, @@session.sql_mode;[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mListing Columns (21.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mListing Columns (65.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
