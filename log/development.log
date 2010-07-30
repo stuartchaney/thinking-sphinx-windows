@@ -88,3 +88,37 @@ Completed in 72ms (View: 11, DB: 52) | 200 OK [http://localhost/listings]
   [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
   [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
   [4;35;1mListing Columns (65.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2010-07-30 13:39:30) [GET]
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mListing Columns (21.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mListing Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+
+NoMethodError (undefined method `define_index' for #<Class:0x6d711c0>):
+  app/models/listing.rb:3
+  app/controllers/listings_controller.rb:5:in `index'
+
+Rendered rescues/_trace (81.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2010-07-30 13:52:54) [GET]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mListing Columns (23.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mListing Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `listings`[0m
+
+NoMethodError (undefined method `define_index' for #<Class:0x6e12c8c>):
+  app/models/listing.rb:3
+  app/controllers/listings_controller.rb:5:in `index'
+
+Rendered rescues/_trace (77.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
