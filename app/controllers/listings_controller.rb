@@ -2,7 +2,8 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.xml
   def index
-    @listings = Listing.search params[:search]
+    @listings = Listing.search params[:search], :page => params[:page], :per_page=>2, :order=> params[:order], 
+    :field_weights=> { :title=> 20, :description=>10 }
 
     respond_to do |format|
       format.html # index.html.erb

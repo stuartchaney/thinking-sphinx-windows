@@ -1,8 +1,15 @@
 <h1>Listing listings</h1>
 
+<% form_tag("", :method => "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
 <table>
   <tr>
-    <th>Title</th>
+    <th><%= link_to "Title", request.request_uri %></th>
     <th>Description</th>
   </tr>
 
@@ -16,6 +23,7 @@
   </tr>
 <% end %>
 </table>
+<%= will_paginate @listings %>
 
 <br />
 
